@@ -5,13 +5,14 @@ var axios = require('axios');
 
 const app = express(); //alias
 
-require('dotenv').config();
+require('dotenv').config({path:'../.env' });
 
 
 //twilio requirements -- change these to your account SID/token
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN; 
-const client = new twilio(accountSid, authToken);
+const googleMaps = process.env.GOOGLE_MAPS_API_KEY;
+const client = new twilio("AC57ba81c90ea1c0f8018490dc0416fb44", "e3281016f8f1bc86f7c7766f8fb7e553");
 
 app.use(cors()); //Blocks browser from restricting any data
 
